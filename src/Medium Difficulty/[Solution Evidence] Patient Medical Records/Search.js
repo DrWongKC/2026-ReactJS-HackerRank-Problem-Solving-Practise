@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import medical_records from "../medicalRecords";
 
 function Search({
-  setRecord,
-  record,
+  setRecords,
+  records,
   setId,
   id,
   setStartedSearch,
@@ -13,11 +12,11 @@ function Search({
 
   const [userChoice, setUserChoice] = useState();
 
-  const userNames = medical_records.map((group) => group.data[0].userName);
+  const userNames = records.map((group) => group.data[0].userName);
   console.log(userNames);
 
   function handleClick(e) {
-    if (true) {
+    if (userChoice != undefined) {
       setStartedSearch(true);
     }
 

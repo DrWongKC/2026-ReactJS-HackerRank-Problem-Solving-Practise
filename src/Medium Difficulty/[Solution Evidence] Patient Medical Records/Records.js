@@ -1,7 +1,6 @@
 import React from "react";
-import medical_records from "../medicalRecords";
 
-function Records() {
+function Records(records) {
   return (
     <div className="patient-profile-container" id="profile-view">
       <div className="layout-row justify-content-center">

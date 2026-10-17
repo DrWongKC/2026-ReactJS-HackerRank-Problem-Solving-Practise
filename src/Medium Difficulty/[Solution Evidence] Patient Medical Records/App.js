@@ -8,14 +8,11 @@ import medical_records from "./medicalRecords";
 const title = "Patient Medical Records";
 
 const App = () => {
-  const data = medical_records;
-
   const [startedSearch, setStartedSearch] = useState(false);
-  const [record, setRecord] = useState();
+  const [records, setRecords] = useState();
   const [id, setId] = useState();
 
-  console.log(data);
-  // setRecord(data);
+  setRecords(medical_records);
 
   return (
     <div className="App">
@@ -23,15 +20,15 @@ const App = () => {
       <div className="content">
         {
           <Search
-            setRecord={setRecord}
-            record={record}
+            setRecords={setRecords}
+            records={records}
             setId={id}
             id={id}
             setStartedSearch={setStartedSearch}
             startedSearch={startedSearch}
           />
         }
-        {startedSearch && <Records />}
+        {startedSearch && <Records records={records} />}
       </div>
     </div>
   );
